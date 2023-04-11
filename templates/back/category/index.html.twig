@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block main %}
+
+	{{ include('_flash_messages.html.twig')  }}
+
+	<h1 class="text-center mt-3 mb-3 text-uppercase text-white">Les Catégories</h1>
+
+	<a class="btn btn-success" href="{{ path('back_category_new') }}">Ajouter une catégorie</a>
+
+	<a class="btn btn-primary float-end" href="{{ path('back_home') }}">Retour</a>
+
+
+	<table class="table table-hover table-responsive text-center text-white">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nom</th>
+				<th>Projet</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for category in categories %}
+				<tr>
+					<td>
+						{{ category.id }}
+					</td>
+					<td>
+						{{ category.nameCategory }}
+					</td>
+					<td>
+						{{ category.project.title }}
+					</td>
+		
+					<td>
+						<div class="d-flex justify-content-end">
+							<a id="button_show" class="btn btn-sm btn btn-warning m-1" href="{{ path('back_category_show', {'id': category.id}) }}">détails</a>
+						   <a id="button_edit" class="btn btn-sm btn btn-warning m-1" href="{{ path('back_category_edit', {'id': category.id}) }}">modifier</a>
+						</div>
+					</td>
+					
+
+				</tr>
+
+			{% else %}
+				<tr>
+					<td colspan="10">Aucun enregistrement trouvé.</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	
+
+
+	
+
+{% endblock %}

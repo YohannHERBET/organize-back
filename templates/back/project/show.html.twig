@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ project.title  }}  {% endblock %}
+    {% block main %}
+    <div class="container text-white">
+
+    <h2 class="text-center mt-3 mb-3 text-uppercase">{{ project.title }}</h2>
+
+    <table class="table text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ project.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ project.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ project.descriptionProject }}</td>
+            </tr>
+            <tr>
+                <th>Utilisateur</th>
+                <td>{{ project.user.nickname }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary float-end" href="{{ path('back_project_index') }}">Retour</a>
+
+    <a class="btn btn-success" href="{{ path('back_project_edit', {'id': project.id}) }}">Modifier</a>
+
+    {{ include('back/project/_delete_form.html.twig') }}
+
+
+</div>
+
+
+{% endblock %}
+

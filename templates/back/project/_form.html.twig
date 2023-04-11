@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+
+{# Decompose if you want to order the fields in a different order to that of the form. #}
+{{ form_row(form.title) }}
+{{ form_row(form.descriptionProject )}}
+{{ form_row(form.user )}}
+
+
+<button class="btn btn-success mb-3">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

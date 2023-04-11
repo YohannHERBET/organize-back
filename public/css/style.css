@@ -1,0 +1,27 @@
+body {
+    background-color: #444444;
+}
+
+#title-navback {
+    opacity: 0.10;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+li {
+    list-style-type: none
+}
+
+#l-navbar {
+
+    position: absolute;
+    width: auto;
+    height: 6rem;
+    text-align: center;
+    top: -25%;
+    left: 45%;
+    
+}
+
+
+

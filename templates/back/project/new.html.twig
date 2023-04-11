@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un projet{% endblock %}
+
+{% block main %}
+
+<div class="container mt-3 text-white">
+	
+	<h1 class="text-center text-uppercase">Ajouter un projet</h1>
+	
+	{{ include('back/project/_form.html.twig') }}
+
+	<a class="btn btn-primary mb-5" href="{{ path('back_project_index') }}">Retour</a>
+
+		
+	</div>
+
+    
+
+{% endblock %}

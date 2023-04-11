@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Catégorie {% endblock %}
+    {% block main %}
+    <div class="container text-white">
+
+    <h2 class="text-center mt-3 mb-3 text-uppercase"> Catégorie</h2>
+
+    <table class="table text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ category.nameCategory }}</td>
+            </tr>
+            <tr>
+                <th>Projet</th>
+                <td>{{ category.project.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary float-end " href="{{ path('back_category_index') }}">Retour</a>
+
+    <a class="btn btn-success" href="{{ path('back_category_edit', {'id': category.id}) }}">Modifier</a>
+
+
+    {{ include('back/category/_delete_form.html.twig') }}
+
+
+
+
+</div>
+        
+{% endblock %}

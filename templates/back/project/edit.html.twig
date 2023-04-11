@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{project.title}} {% endblock %}
+
+
+{% block main %}
+
+	<div class="container text-white mt-4">
+
+		<h1 class="text-center text-uppercase">Modifier : {{project.title}} </h1>
+
+		<div>
+
+			{{ include('back/project/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+			<a class="btn btn-primary" href="{{ path('back_project_index') }}">Retour</a>
+
+		</div>
+
+		
+
+	
+
+	</div>
+
+
+{% endblock %}

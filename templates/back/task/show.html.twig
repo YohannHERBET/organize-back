@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ task.name  }}  {% endblock %}
+    {% block main %}
+    <div class="container text-white">
+
+    <h2 class="text-center mt-3 mb-3 text-uppercase">{{ task.name }}</h2>
+
+    <table class="table text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ task.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ task.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ task.descritpionTask }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ task.category.nameCategory }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary float-end " href="{{ path('back_task_index') }}">Retour</a>
+
+    <a class="btn btn-success" href="{{ path('back_task_edit', {'id': task.id}) }}">Modifier</a>
+
+    {{ include('back/task/_delete_form.html.twig') }}
+
+
+</div>
+
+
+{% endblock %}

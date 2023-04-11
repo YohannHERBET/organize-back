@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier : {{ user.nickname  }}{% endblock %}
+
+{% block main %}
+
+
+
+<div class=" container text-white mt-4">
+
+    <h1>Modification de {{ user.nickname }}</h1>
+
+    <div>
+
+        {{ include('back/user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        <a class="btn btn-primary" href="{{ path('back_user_index') }}">Retour</a>
+
+    </div>
+
+
+    
+   
+
+</div>
+
+
+{% endblock %}

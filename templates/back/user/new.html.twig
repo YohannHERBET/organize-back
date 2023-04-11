@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un utilisateur{% endblock %}
+
+{% block main %}
+
+
+	<div class="container mt-3 text-white">
+
+		<h1 class="text-center text-uppercase">Ajouter un utilisateur</h1>
+
+		{{ include('back/user/_form.html.twig') }}
+		
+		<a class="btn btn-primary " href="{{ path('back_user_index') }}">Retour</a>
+
+		
+
+	</div>
+
+
+{% endblock %}

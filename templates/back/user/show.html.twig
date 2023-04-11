@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ user.nickname  }}  {% endblock %}
+    {% block main %}
+    <div class="container text-white">
+
+    <h2 class="text-center mt-3 mb-3 text-uppercase">{{ user.nickname }}</h2>
+
+    <table class="table text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Rôle</th>
+                <td>{{ user.roles|join(', ') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary float-end " href="{{ path('back_user_index') }}">Retour</a>
+
+    <a class="btn btn-success" href="{{ path('back_user_edit', {'id': user.id}) }}">Modifier</a>
+
+    {{ include('back/user/_delete_form.html.twig') }}
+
+
+</div>
+
+
+{% endblock %}
